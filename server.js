@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 // again. CORS Anywhere is open by design, and this blacklist is not used, except for countering
 // immediate abuse (e.g. denial of service). If you want to block all origins except for some,
 // use originWhitelist instead.
-var originWhitelist = ['http://127.0.0.1:3006/', 'anotherdomain.com']; // Ganti dengan daftar domain yang diizinkan
+// var originWhitelist = ['http://127.0.0.1:3006/', 'anotherdomain.com']; // Ganti dengan daftar domain yang diizinkan
 function parseEnvList(env) {
   if (!env) {
     return [];
@@ -20,10 +20,10 @@ function parseEnvList(env) {
 
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
-  originBlacklist: originBlacklist,
-  originWhitelist: originWhitelist,
+  // originBlacklist: originBlacklist,
+  // originWhitelist: originWhitelist,
   requireHeader: ['origin', 'x-requested-with'],
-  checkRateLimit: checkRateLimit,
+  // checkRateLimit: checkRateLimit,
   removeHeaders: [
     'cookie',
     'cookie2',
